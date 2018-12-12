@@ -22,6 +22,7 @@ class Singleton{
 	private static Singleton singleton = new Singleton();//如果把这行代码放到number的下面。那么它们都是1
 	public static int number1;
 	public static int number2 = 0;
+//	private static Singleton singleton = new Singleton();
 	
 	static{
 		System.out.println(singleton.toString());

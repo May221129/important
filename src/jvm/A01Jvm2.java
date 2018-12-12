@@ -1,11 +1,20 @@
 package jvm;
-//这个例子是为了明白new之后都做了是那么事情，还有就是多态
-/*
+
+/**
+ * 这个例子是为了明白new之后都做了是那么事情，还有就是多态
  * 运行结果：
- *  Target=> 0
- *	Target=> 30
- *	Depend=> 20
- *	Depend=> 10
+ *  jvm.A01Jvm2
+	Target=> 0
+	Target=> 30
+	Depend=> 20
+	jvm.Depend
+	Depend=> 10
+
+	jvm.A01Jvm2
+	Target=> 0
+	Target=> 30
+	Depend=> 20
+	20
  */
 public class A01Jvm2 extends Depend{
 	public static void main(String[] args){

@@ -49,11 +49,11 @@ class Sup{
 
 class Sub extends Sup{
 	String name = "всюЮ";
-//	public void setName(String name) {
-//		this.name = name;
-//	}
-//	public String getName() {
-//		System.out.println(this.getClass().getName());
-//		return name;
-//	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getName() {
+		System.out.println(this.getClass().getName());
+		return name;
+	}
 }

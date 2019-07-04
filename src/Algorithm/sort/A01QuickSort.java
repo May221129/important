@@ -1,4 +1,4 @@
-package sort;
+package Algorithm.sort;
 
 /**
  * 排序之快速排序【该类中写的都是没有优化的版本。优化之后的在A02Quicksort】

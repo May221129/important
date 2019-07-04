@@ -14,7 +14,7 @@ package sort;
  *		对于非常大的待排序的序列来说还是不足以保证能够选择出一个好的pivot， 因此还有个办法是所谓的九数取中，
  *		先从数组中分三次取样，每次取三个数，三个样品各取出中数，然后从这三个中数当中再取出一个中数作为枢轴 。
  */
-public class A02Quicksort {
+public class A02QuickSort {
 	public static void main(String[] args) {
 		int[] array = {181, 181, 187, 181};
 		quicksort(array, 0, array.length-1);

@@ -37,6 +37,7 @@ public class A01QuickSort {
 		
 		//配合后面的元素输出，测试快排是否排序准确：
 		int[] array = new int[] {181,181,187,181};
+//		int[] array = new int[] {18,10};
 		System.out.println("数组准备完毕~");
 
 		long start = System.currentTimeMillis();
@@ -55,12 +56,12 @@ public class A01QuickSort {
 	 * @param right
 	 */
 	public void quickSort(int[] target, int left, int right) {
-		if (left > right) {
+		if (left >= right) {
 			return;
 		}
 		int pivot = target[left];// 基准点
 		int temp;
-		int i = left + 1;// 这么写，可以不用比较target[left]和key，它们就是同一个位置
+		int i = left;
 		int j = right;//为什么要声明i和j，因为后面做迭代的时候还需要用到最初的left和right
 		while (i < j) {//验证array数组至少有2个元素，才要做排序
 			/**
@@ -80,7 +81,7 @@ public class A01QuickSort {
 				i++;
 			}
 			// 此时right < key, left > key，将i和j做交换：
-			if (i < j) {//这里做判断是为了right到了left位置时(此时left位置起始也是temp位置)，不用再将执行下面这两行代码了：
+			if (i < j) {//这里做判断是为了right到了left位置时，不用再将执行下面这三行代码了：
 				temp = target[i];
 				target[i] = target[j];
 				target[j] = temp;

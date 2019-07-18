@@ -9,7 +9,7 @@ import MyIOCAndMyAop.bean.Subject;
 
 
 /**
- * 自己实现AOP（1.0版本，没有仿照Spring写的）:在某个方法上加"@InOutLog"注解，那么执行到该方法时，方法的前面、后面会输出日志信息。
+ * 自己实现AOP：1.0版本：在某个方法上加"@InOutLog"注解，那么执行到该方法时，方法的前面、后面会输出日志信息。
  * 
  * @author May
  * 2019年6月25日

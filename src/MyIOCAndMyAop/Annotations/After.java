@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 前置通知（就算方法出异常了，也会执行的通知）
+ * 前置通知
  * 
  * @author May
  * 2019年6月27日

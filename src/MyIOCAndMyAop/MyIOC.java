@@ -17,7 +17,7 @@ import MyIOCAndMyAop.Annotations.MyComponent;
 
 /**
  * 自己实现简单的IOC容器，来管理bean。
- * BeanFactory<String, Object>:全类名，通过类加载器加载进来的Class对象反射创建的bean。
+ * BeanFactory<String, Object>，String为全类名，Object为通过类加载器加载进来的Class对象反射创建的bean。
  */
 public class MyIOC {
 
@@ -25,7 +25,7 @@ public class MyIOC {
 	private static HashMap<String, Object> beanFactory = new HashMap<>();
 	
 	/**
-	 * 随着MyIOC类被加载到内存进行实例化，就会执行其静态代码块，所以在没有main方法时就把init方法放到静态代码块中。
+	 * 随着MyIOC类被加载到内存进行初始化，就会执行其静态代码块，所以在没有main方法时就把init方法放到静态代码块中。
 	 * @param args
 	 */
 	static {

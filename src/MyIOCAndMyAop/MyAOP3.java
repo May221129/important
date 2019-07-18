@@ -9,9 +9,9 @@ import MyIOCAndMyAop.Annotations.Aspect;
 import MyIOCAndMyAop.bean.SuperMan;
 
 /**
- * 自己实现AOP（2.0版本，仿照Spring的AOP写的，有环绕通知、前置通知、后置通知、返回通知、异常通知等）。
- * 已实现：①通过动态代理+通知的注解类，实现了前置通知、后置通知等各种通知；②切点（在需要通知的方法上加注解）；③切面（同②）；
- * 未做：①通知的格式没写成可配置的； ②切点、切面没抽取成一个更方便配置的切面类；
+ * 自己实现AOP 2.0：实现Spring AOP，有环绕通知、前置通知、后置通知、返回通知、异常通知等。
+ * 	已实现：①通过动态代理+通知的注解类，实现了前置通知、后置通知等各种通知；②切点（在需要通知的方法上加注解）；③切面（同②）；
+ * 	未实现：①通知的格式没写成可配置的； ②切点、切面没抽取成一个更方便配置的切面类；
  * （1）spring:被代理类的接口、被代理类、各种注解类、BeanFactory、切面类（@Aspect、@Pointcut、@Before等各种通知）、XML、
  * 【/spring/src/com/llm/a02aop/a02useaopwithannotation/A03LoggingAspect.java】
  * （2）MyAOP3：被代理类的接口、被代理类、代理类、生成“代理类的对象”的类、注解类、BeanFactory、各种通知、
@@ -20,10 +20,6 @@ import MyIOCAndMyAop.bean.SuperMan;
  */
 public class MyAOP3 {
 	public static void main(String[] args) {
-		/**
-		 * 使用步骤： ① 給指定类的某个方法加@InOutLog注解； ② 通过BeanFactory或的该类的实例； ③ 执行bean.method()；
-		 * 效果：method()方法的前后有了log的输出。
-		 */
 		String completeClassName1 = "MyIOCAndMyAop.bean.Student";
 		Object bean = MyIOC.getBean(completeClassName1);
 		SuperMan superMan = (SuperMan) bean;

@@ -1,5 +1,7 @@
 package Algorithm;
 
+import org.junit.Test;
+
 /**
  * 探究：位运算和取模运算的运算效率对比。
  * 	总说计算机是擅长于做位运算的，那么到底它有多擅长呢？
@@ -15,9 +17,10 @@ package Algorithm;
  * 2019年7月26日
  */
 public class BitAndModulus {
-	public static void main(String[] args) {
+	@Test
+	public void bit() {
 		int number = 10000 * 10;
-		int a = 1, b = 1;
+		int a = 1;
 		
 		long start = System.currentTimeMillis();
 		for(int i = number; i > 0 ; i++) {
@@ -25,14 +28,18 @@ public class BitAndModulus {
 		}
 		long end = System.currentTimeMillis();
 		System.out.println("位运算耗时： " + (end - start));
+	}
+	
+	@Test
+	public void modulus() {
+		int number = 10000 * 1000;
+		int a = 1;
 		
-		System.out.println("---------------------------------");
-		
-		start = System.currentTimeMillis();
+		long start = System.currentTimeMillis();
 		for(int i = number; i > 0; i++) {
-			b %= i;
+			a %= i;
 		}
-		end = System.currentTimeMillis();
+		long end = System.currentTimeMillis();
 		System.out.println("取模运算耗时： " + (end - start));
 	}
 }

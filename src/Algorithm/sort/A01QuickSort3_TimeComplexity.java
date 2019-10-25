@@ -1,17 +1,20 @@
 package Algorithm.sort;
 
 /**
- * 排序之快速排序【该类中写的都是没有优化的版本。优化之后的在A02Quicksort】
- * 1. 实现：【博客：https://blog.csdn.net/shujuelin/article/details/82423852】
- * 	①找基准点：一般是数组的第一个元素来充当； 
- * 	②right：从数组的最后一个元素开始，从右往左，直到找到小于基准点的元素；每次都要right比left先走； 
- * 	③left：从数组的第一个元素开始，从左往右，直到找到大于基准点的元素；
- * 	④交换 left 和 right 所在位置的两个元素；
- * 	⑥right 继续往左走，找到小于基准点的元素；left 继续往右走，找到大于基准点的元素；然后 left 和 right 再做交换；循环往复，直到两人相遇；
- * 	⑦将相遇点所在位置的元素和基准点所在位置的元素做交换，基准点到了中间位置（此时基准点左边的元素全都小于基准点右边的元素）；
- * 	⑧【递归】将基准点左边的所有元素当成一个数组，重复①~⑦步骤；基准点右边的所有元素也是如此；
+ * 排序的时间复杂度分析
  * 
- * 2. 快排的效率为什么高：空间复杂度和时间复杂度；用概念来套冒泡和快排。
+ * 1. 快排的时间复杂度：
+ * 		一般而言：O(n * log(n))
+ * 		最优时：O(n * log2(n))
+ * 		最差时：O(n^2)
+ * 
+ * 2. 快排的时间复杂度是怎么计算出来的？
+ * 		
+ * 3. 在什么情况下快排的时间复杂度能达到最优？什么情况下快排排序的时间复杂度会降到最差？
+ * 		最优：二分
+ * 		最差：通过快排将一个从大到小的数组，排序为从小到大时，其时间复杂度为O(n^2)。
+ * 
+ * 4. 快排的效率为什么高：空间复杂度和时间复杂度；用概念来套冒泡和快排。
  * 	（1）一般情况下，算法中基本操作重复执行的次数是问题规模n的某个函数，用T(n)表示
  * 	（2）在计算算法复杂度时一般只用到大O符号
  * 	（3）在各种不同算法中，若算法中语句执行次数为一个常数，则时间复杂度为O(1)
@@ -21,13 +24,11 @@ package Algorithm.sort;
  * 		其中Ο(log2n)、Ο(n)、 Ο(nlog2n)、Ο(n2)和Ο(n3)称为多项式时间，而Ο(2n)和Ο(n!)称为指数时间。
  * 		计算机科学家普遍认为前者（即多项式时间复杂度的算法）是有效算法
  * 
- * 3. 快排的时间复杂度：O（n×log（n））
- * 	什么情况下，快排的时间复杂度会降低到"N的平方"：通过快排将一个从大到小的数组，排序为从小到大时，其效率为"N的平方"。
  * 	【博客：https://www.cnblogs.com/fengty90/p/3768827.html】
  */
-public class A01QuickSort {
+public class A01QuickSort3_TimeComplexity {
 	public static void main(String[] args) {
-		A01QuickSort quickSort = new A01QuickSort();
+		A01QuickSort3_TimeComplexity quickSort = new A01QuickSort3_TimeComplexity();
 		// 测试快排的效率：
 //		int number = 1000000;
 //		int[] array = new int[number];
@@ -36,7 +37,7 @@ public class A01QuickSort {
 //		}
 		
 		//配合后面的元素输出，测试快排是否排序准确：
-		int[] array = new int[] {181,181,187,181};
+		int[] array = new int[] {9,8,7,6,5,4,3,2,1};
 //		int[] array = new int[] {18,10};
 		System.out.println("数组准备完毕~");
 
